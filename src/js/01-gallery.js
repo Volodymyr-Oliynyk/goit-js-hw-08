@@ -11,7 +11,7 @@ const imagesList = galleryItemsList
   .map((element) => {
     const { preview, original, description } = element;
 
-    return `<li>
+    return `
   <a class="gallery__link" href="${original}">
   <img
   class="gallery__image"
@@ -19,7 +19,7 @@ const imagesList = galleryItemsList
    alt="${description}"
   />
 </a> 
-</li>`;
+`;
   })
   .join("");
 
