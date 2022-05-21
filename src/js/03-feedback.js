@@ -15,10 +15,10 @@ const onInputData = e => {
   const onFormSubmit = e => {
     e.preventDefault();
  
-    // if (feedbackForm.elements.email.value == '' || feedbackForm.elements.message.value == '') {
-    //   alert('Заполни пустые поля');
-    //   return;
-    // }
+    if (feedbackForm.elements.email.value == '' || feedbackForm.elements.message.value == '') {
+      alert('Всі поля мають бути заповнені');
+      return;
+    }
     localStorage.removeItem(FEEDBACK_KEY);
     e.currentTarget.reset();
     console.log(dataValueSave);
