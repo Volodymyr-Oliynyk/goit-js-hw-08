@@ -21,16 +21,18 @@ const onInputData = e => {
     }
     localStorage.removeItem(FEEDBACK_KEY);
     e.currentTarget.reset();
-    console.log(dataValueSave);
+    console.log(formData);
+
   };
-  
+    
+  saveInputData();
+
   function saveInputData() {
     if (dataValueSave) {
       Object.keys(dataValueSave).forEach(item => (feedbackForm[item].value = dataValueSave[item]));
     }
   }
-  
-  saveInputData();
+
   
   feedbackForm.addEventListener('input', throttle(onInputData, 500));
   feedbackForm.addEventListener('submit', onFormSubmit);
