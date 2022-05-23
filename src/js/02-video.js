@@ -10,5 +10,7 @@ const onPlay = function(data) {
 };
 
 const currentTime = localStorage.getItem(STORAGE_KEY);
-player.setCurrentTime(currentTime)
+if (currentTime !== undefined){
+player.setCurrentTime(currentTime);
+}
 player.on('timeupdate', throttle(onPlay, 1000));
